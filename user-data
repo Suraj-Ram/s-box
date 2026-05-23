@@ -26,6 +26,13 @@ resize_rootfs: true
 package_update: true
 package_upgrade: true
 
+apt:
+  sources:
+    fastfetch-ppa:
+      source: "deb https://ppa.launchpadcontent.net/zhangsongcui3371/fastfetch/ubuntu noble main "
+      keyid: EB65EE19D802F3EB1A13CFE47E2E5CB4D4865F21
+    
+
 packages:
   - git
   - curl
@@ -34,4 +41,5 @@ packages:
   - htop
   - tmux
   - ca-certificates
+  - fastfetch
 
