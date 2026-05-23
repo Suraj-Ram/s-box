@@ -44,7 +44,7 @@ boot:
 
 # SSH into the running VM
 ssh:
-    ssh -p {{ ssh_port }} suraj@localhost
+    ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -p {{ ssh_port }} suraj@localhost
 
 # delete working disk and seed ISO
 destroy:
