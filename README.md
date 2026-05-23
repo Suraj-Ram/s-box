@@ -20,3 +20,7 @@ qemu-system-aarch64 \
   -device virtio-net-pci,netdev=net0 \
   -netdev user,id=net0,hostfwd=tcp::2222-:22 \
   -nographic
+
+TODO
+
+To get faster internet speeds in the VM, replace `netdev` with `-netdev vmnet-shared,id=net0 \` however this requires QEMU to run as root.
