@@ -1,0 +1,37 @@
+#cloud-config
+hostname: sbox-dev
+
+users:
+  - name: suraj
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    shell: /bin/bash
+    groups: [adm, sudo]
+    ssh_authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILeYA6dOWwxWpoMjWPE0wNfwH30yBqVFI+1MzrU/T7fO bissuraj@gmail.com
+
+# also allow password login for console access if needed
+chpasswd:
+  users:
+    - name: suraj
+      password: changeme
+      type: text
+  expire: false
+# let cloud-init grow the partition to fill the 50G disk
+growpart:
+  mode: auto
+  devices: ["/"]
+
+resize_rootfs: true
+
+package_update: true
+package_upgrade: true
+
+packages:
+  - git
+  - curl
+  - wget
+  - vim
+  - htop
+  - tmux
+  - ca-certificates
+

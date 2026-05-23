@@ -1,0 +1,9 @@
+.vscode/
+
+# base cloud images
+*.img
+# working VM disks
+*.qcow2
+ 
+# seed ISO (generated from user-data + meta-data)
+seed.iso
